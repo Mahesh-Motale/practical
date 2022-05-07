@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Practicals</title>
+</head>
+<body>
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <a class="btn btn-danger" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
+            aria-expanded="false" aria-controls="multiCollapseExample1">Computer Graphics</a>
+        <a class="btn btn-warning" data-bs-toggle="collapse" href="#ProcessorArchitecture" role="button"
+            aria-expanded="false" aria-controls="multiCollapseExample1">Processor Architecture</a>
+        <a class="btn btn-success" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
+            aria-expanded="false" aria-controls="multiCollapseExample1">DBMS</a>
+    </div>
+    <div id="ProcessorArchitecture">
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#PA1" role="button" aria-expanded="false"
+                aria-controls="multiCollapseExample1">1. Addition of two hexadecimal number</a>
+        </p>
+        <div class="row">
+            <div class="collapse multi-collapse flex" id="PA1">
+                <div class="card card-body">
+                    <p> #include&#60;stdio.h> <br>#include&#60;stdlib.h> <br> #include&#60;pic18f4550.h> <br> void main(void) <br>{<br> int sum;<br>sum=0;<br> sum=0x0A+0x02;<br>TRISB=0;<br>PORTB=sum;<br>
+                        }<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#PA2" role="button" aria-expanded="false"
+                aria-controls="multiCollapseExample1">2. add array of n numbers</a>
+        </p>
+        <div class="row">
+            <div class="collapse multi-collapse flex" id="PA2">
+                <div class="card card-body">
+                    <p> #include &#60;stdio.h> <br>
+ #include &#60;stdlib.h><br>
+ #include &#60;pic18f4550.h><br>
+ void main(void){<br>
+   int i,sum;<br>
+  int number[]={1,2,3,4,5,6,7,8,9,10};<br>
+   sum = 0;<br>   for(i=0;i<=9;i++)<br>
+            {<br> sum = sum+number[i];<br>
+               }<br>
+                            TRISB = 0;<br>
+        PORTB=sum;<br>
+                }
+                            <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#PA3" role="button" aria-expanded="false"
+                aria-controls="multiCollapseExample1">3. transfer element from 1 location to another
+            </a>
+        </p>
+        <div class="row">
+            <div class="collapse multi-collapse flex" id="PA3">
+                <div class="card card-body">
+                    <p> #include&#60;stdio.h><br>
+                        #include&#60;stdlib.h><br>
+                        #include&#60;pic18f4550.h><br>
+                        void main(void)<br>
+                        {<br>
+           inttemp,i;<br>
+                        int source1[]={0x21,0x22,0x23,0x24,0x25};<br>
+         int dest[]={0x99,0x99,0x99,0x99,0x99};<br>
+                        for(i=0;i<=4;i++)<br>
+                            {<br>
+                            temp=source1[i];<br>
+           source1[i]=dest[i];<br>
+                            dest[i]=temp;<br>
+                            }<br>
+                            }<br>
+
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#PA41" role="button" aria-expanded="false"
+                aria-controls="multiCollapseExample1">4.1 Multiply 8 bit number by 8 bit number</a>
+        </p>
+        <div class="row">
+            <div class="collapse multi-collapse flex" id="PA41">
+                <div class="card card-body">
+                    <p> #include&#60;stdlib.h><br>
+                        #include&#60;pic18f4550.h><br>
+                        void main(void)<br>
+                        {<br>
+                        int num1,num2;<br>
+                        intresult,i;<br>
+                        result=0;<br>
+                        num1=0x03;<br>
+                        num2=0x10;<br>
+                        for(i=1;i<=num2;i++)<br>
+                            {<br>
+                            result=result+num1;<br>
+                            }<br>
+                            TRISB=0;<br>
+                            PORTB=result;<br>
+                            }<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#PA42" role="button" aria-expanded="false"
+                aria-controls="multiCollapseExample1">4.2 Divide 8 bit number by 8 bit number</a>
+        </p>
+        <div class="row">
+            <div class="collapse multi-collapse flex" id="PA42">
+                <div class="card card-body">
+                    <p> #include&#60;stdio.h><br>
+                        #include&#60;stdlib.h><br>
+                        #include&#60;pic18f4550.h><br>
+                        void main(void)<br>
+                        {<br>
+                        inti, dividend, divisor, quotient, remainder;<br>
+                        dividend=0x08;<br>
+                        divisor=0x02;<br>
+                        quotient=0;<br>
+                        remainder=0;<br>
+                        for(i=0; dividend>=divisor;i++)<br>
+                        {<br>
+                        dividend = dividend-divisor;<br>
+                        quotient = quotient+1;<br>
+                        }<br>
+                        remainder =dividend;<br>
+                        TRISB=0;<br>
+                        PORTB=quotient;<br>
+                        }<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#PA51" role="button" aria-expanded="false"
+                aria-controls="multiCollapseExample1">5.1 sorting of array in Ascending order</a>
+        </p>
+        <div class="row">
+            <div class="collapse multi-collapse flex" id="PA51">
+                <div class="card card-body">
+                    <p> #include &#60;stdio.h><br>
+                        #include &#60;stdlib.h><br>
+                        #include &#60;pic18f4550.h><br>
+                        void main(void) {<br>
+                        inti,j,temp;<br>
+                        intnum_asc[]={10,2,5,1,6};<br>
+                        for(i=0;i<=4;i++)<br>
+                            {<br>
+                            for(j=i+1;j<=4;j++)<br>
+                                if(num_asc[i]>num_asc[j])<br>
+                                {<br>
+                                temp=num_asc[i];<br>
+                                num_asc[i]=num_asc[j];<br>
+                                num_asc[j]=temp;<br>
+                                }<br>
+                                }<br>
+                                }<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#PA52" role="button" aria-expanded="false"
+                aria-controls="multiCollapseExample1">5.2 Unsigned int time delay</a>
+        </p>
+        <div class="row">
+            <div class="collapse multi-collapse flex" id="PA52">
+                <div class="card card-body">
+                    <p> #include &#60;stdio.h><br>
+                        #include &#60;stdlib.h><br>
+                        #include &#60;pic18f4550.h><br>
+                        void delay(unsigned int time)<br>
+                        {<br>
+                        unsigned int i,j;<br>
+                        for(i=0;i &#60;time;i++) <br>
+                        for(j=0;j&#60;5000;j++); <br>
+                        }<br>
+                        void main(void) {<br>
+                        TRISB = 0X00;<br>
+                        LATB = 0Xff;<br>
+                        while(1)<br>
+                        {<br>
+                        LATB = ~LATB;<br>
+                        delay(50);<br>
+                        }<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#PA6" role="button" aria-expanded="false"
+                aria-controls="multiCollapseExample1">6. LED Blinking</a>
+        </p>
+        <div class="row">
+            <div class="collapse multi-collapse flex" id="PA6">
+                <div class="card card-body">
+                    <p>
+                        #include &#60;p18f4550.h><br>
+                        <br>
+                        void delay(unsigned int time)<br>
+                        {<br>
+                        unsigned int i,j;<br>
+                        for(i=0;i &#60;time;i++)<br>
+                        for(j=0;j&#60;5000;j++);<br>
+                        }
+                        <br>
+                        void main(void)<br>
+                        {<br>
+                        TRISB = 0x00;<br>
+                        LATB = 0xFF;<br>
+                        <br>
+                        while(1) //Loop forever;<br>
+                        {<br>
+                        LATB = ~LATB;<br>
+                        delay(200);<br>
+                        }<br>
+                        }<br>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#PA7" role="button" aria-expanded="false"
+                aria-controls="multiCollapseExample1">7. Buzzer </a>
+        </p>
+        <div class="row">
+            <div class="collapse multi-collapse flex" id="PA7">
+                <div class="card card-body">
+                    <p>#include &#60;pic18f4550.h> /* Contains PIC18F4550 specifications */<br>
+                        <br>
+                        #define Buzzer LATAbits.LATA5 /* Define buzzer pin */<br>
+                        unsigned int count = 0;<br>
+                        <br>
+                        void interrupt Timer1_ISR()<br>
+                        {<br>
+                        if(TMR1IF==1)<br>
+                        {<br>
+                        //TMR1=0xCF2C;<br>
+                        TMR1L = 0x20;<br>
+                        TMR1H = 0xD1;<br>
+                        count ++;<br>
+                        <br>
+                        if (count >= 1000) //measure upto 1000 ms i.e. 1 seconds<br>
+                        {<br>
+                        Buzzer = ~Buzzer; /* Toggle buzzer pin */<br>
+                        count = 0; //reset count<br>
+                        }<br>
+                        TMR1IF = 0; //timer1 overflow flag to 0<br>
+                        }<br>
+                        }<br>
+                        <br>
+                        <br>
+                        void main()<br>
+                        {<br>
+                        TRISB=0; /* Set as output port */<br>
+                        TRISAbits.TRISA5 = 0; //set buzzer pin RA5 as output<br>
+                        GIE=1; /* Enable Global Interrupt */<br>
+                        PEIE=1; /* Enable Peripheral Interrupt */<br>
+                        TMR1IE=1; /* Enable Timer1 Overflow Interrupt */<br>
+                        TMR1IF=0;<br>
+                        <br>
+                        /* Enable 16-bit TMR1 register,no pre-scale,internal clock, timer OFF */<br>
+                        T1CON=0x80; /*1:8 prescale*/<br>
+                        TMR1L = 0x20;<br>
+                        TMR1H = 0xD1;<br>
+                        TMR1ON=1; /* Turn ON Timer1 */<br>
+                        <br>
+                        while(1);<br>
+                        }<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#PA8" role="button" aria-expanded="false"
+                aria-controls="multiCollapseExample1">8. External Interrupt</a>
+        </p>
+        <div class="row">
+            <div class="collapse multi-collapse flex" id="PA8">
+                <div class="card card-body">
+                    <p>
+                        #include &#60;pic18f4550.h><br>
+                        <br>
+                        #define RELAY_PIN LATAbits.LATA4<br>
+                        <br>
+                        void interrupt extint_isr(void)<br>
+                        {<br>
+                        unsigned int i;<br>
+                        if(INT1F)<br>
+                        {<br>
+                        INT1F = 0;<br>
+                        INT1IE = 0;<br>
+                        RELAY_PIN = ~RELAY_PIN;<br>
+                        for(i=0; &#60;10000; i++); //small delay for debouncing<br>
+                        INT1IE = 1;<br>
+                        }<br>
+                        }<br>
+                        <br>
+                        int main()<br>
+                        {<br>
+                        ADCON1 = 0x0F; //set pins as Digital<br>
+                        TRISAbits.TRISA4 = 0; //set relay pin RA4 as output<br>
+                        TRISBbits.TRISB1 = 1; //Interrupt pin as input<br>
+                        RELAY_PIN = 1;<br>
+                        <br>
+                        INT1IE = 1; //Enable external interrupt INT1<br>
+                        INTEDG1 = 0; //Interrupt on falling edge<br>
+                        GIE = 1; // Enable global interrupt<br>
+                        <br>
+                        while(1);<br>
+                        }
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#PA9" role="button" aria-expanded="false"
+                aria-controls="multiCollapseExample1">9. LCD</a>
+        </p>
+        <div class="row">
+            <div class="collapse multi-collapse flex" id="PA9">
+                <div class="card card-body">
+                    <p>#include &#60;p18f4550.h><br>
+                        <br>
+                        #define LCD_EN LATAbits.LA1<br>
+                        #define LCD_RS LATAbits.LA0<br>
+                        #define LCDPORT LATB<br>
+                        <br>
+                        <br>
+                        void lcd_delay(unsigned int time)<br>
+                        {<br>
+                        unsigned int i , j ;<br>
+                        <br>
+                        for(i = 0; i < time; i++)<br>
+                            {<br>
+                            for(j=0;j&#60;100;j++);<br>
+                            }<br>
+                            }<br>
+
+                            <br>
+                            void SendInstruction(unsigned char command)<br>
+                            {<br>
+                            LCD_RS = 0; // RS low : Instruction<br>
+                            LCDPORT = command;<br>
+                            LCD_EN = 1; // EN High<br>
+                            lcd_delay(10);<br>
+                            LCD_EN = 0; // EN Low; command sampled at EN falling edge<br>
+                            lcd_delay(10);<br>
+                            }<br>
+                            <br>
+                            void SendData(unsigned char lcddata)<br>
+                            {<br>
+                            LCD_RS = 1; // RS HIGH : DATA<br>
+                            LCDPORT = lcddata;<br>
+                            LCD_EN = 1; // EN High<br>
+                            lcd_delay(10);<br>
+                            LCD_EN = 0; // EN Low; data sampled at EN falling edge<br>
+                            lcd_delay(10);<br>
+                            }<br>
+                            <br>
+                            void InitLCD(void)<br>
+                            {<br>
+                            ADCON1 = 0x0F;<br>
+                            TRISB = 0x00; //set data port as output<br>
+                            TRISAbits.RA0 = 0; //RS pin<br>
+                            TRISAbits.RA1 = 0; // EN pin<br>
+                            <br>
+                            SendInstruction(0x38); //8 bit mode, 2 line,5x7 dots<br>
+                            SendInstruction(0x06); // entry mode<br>
+                            SendInstruction(0x0C); //Display ON cursor OFF<br>
+                            SendInstruction(0x01); //Clear display<br>
+                            SendInstruction(0x80); //set address to 1st line<br>
+                            <br>
+                            }<br>
+                            /********************************************************************************************************************/
+                            <br><br>
+                            unsigned char *String1 = "Microembedded";<br>
+                            unsigned char *String2 = "PIC-18F Board";<br>
+                            <br>
+                            void main(void)<br>
+                            {<br>
+                            ADCON1 = 0x0F;<br>
+                            TRISB = 0x00; //set data port as output<br>
+                            TRISAbits.RA0 = 0; //RS pin<br>
+                            TRISAbits.RA1 = 0; // EN pin<br>
+                            <br>
+                            SendInstruction(0x38); //8 bit mode, 2 line,5x7 dots<br>
+                            SendInstruction(0x06); // entry mode<br>
+                            SendInstruction(0x0C); //Display ON cursor OFF<br>
+                            SendInstruction(0x01); //Clear display<br>
+                            SendInstruction(0x80); //set address to 1st line<br>
+                            <br>
+                            while(*String1)<br>
+                            {<br>
+                            SendData(*String1);<br>
+                            String1++;<br>
+                            }<br>
+                            <br>
+                            SendInstruction(0xC0); //set address to 2nd line<br>
+                            while(*String2)<br>
+                            {<br>
+                            SendData(*String2);<br>
+                            String2++;<br>
+                            }
+                            <br>
+                            while(1);<br>
+                            <br>
+                            }<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#PA10" role="button" aria-expanded="false"
+                aria-controls="multiCollapseExample1">10. PWM</a>
+        </p>
+        <div class="row">
+            <div class="collapse multi-collapse flex" id="PA10">
+                <div class="card card-body">
+                    <p>/* Calculations<br>
+                        * Fosc = 48MHz<br>
+                        *<br>
+                        * PWM Period = [(PR2) + 1] * 4 * TMR2 Prescale Value / Fosc<br>
+                        * PWM Period = 200us<br>
+                        * TMR2 Prescale = 16<br>
+                        * Hence, PR2 = 149 or 0x95<br>
+                        *<br>
+                        * Duty Cycle = 10% of 200us<br>
+                        * Duty Cycle = 20us<br>
+                        * Duty Cycle = (CCPR1L:CCP1CON&#60;5:4>) * TMR2 Prescale Value / Fosc<br>
+                        * CCP1CON&#60;5:4> = &#60;1:1><br>
+                        * Hence, CCPR1L = 15 or 0x0F<br>
+                        */<br>
+                        <br><br>
+
+                        #include&#60;p18f4550.h><br>
+                        <br><br>
+                        unsigned char count=0;<br>
+                        bit TIMER,SPEED_UP;<br>
+                        <br><br>
+                        void timer2Init(void)<br>
+                        {<br>
+                        T2CON = 0b00000010; //Prescalar = 16; Timer2 OFF<br>
+                        PR2 = 0x95; //Period Register<br>
+                        }<br>
+                        <br>
+                        <br>
+                        void delay(unsigned int time)<br>
+                        {<br>
+                        unsigned int i,j;<br>
+                        for(i=0;&#60;time;i++)<br>
+                        for(j=0;j&#60;1000;j++);<br>
+                        }<br>
+
+                        <br>
+                        void main(void)<br>
+                        {<br>
+                        unsigned int i;<br>
+                        TRISCbits.TRISC1 = 0; //RC1 pin as output<br>
+                        TRISCbits.TRISC2 = 0; //CCP1 pin as output<br>
+                        LATCbits.LATC1 = 0;<br>
+                        CCP1CON = 0b00111100; //Select PWM mode; Duty cycle LSB CCP1CON&#60;4:5> = &#60;1:1><br>
+                        CCPR1L = 0x0F; //Duty cycle 10%<br>
+                        timer2Init(); //Initialise Timer2<br>
+                        TMR2ON = 1; //Timer2 ON<br>
+                        <br>
+                        while(1) //Loop forever<br>
+                        {<br>
+                        for(i=15;&#60;150;i++)<br>
+                        {<br>
+                        CCPR1L = i;<br>
+                        delay(100);<br>
+                        }<br>
+                        for(i=150;i>15;i--)<br>
+                        {<br>
+                        CCPR1L = i;<br>
+                        delay(100);<br>
+                        }<br>
+                        }<br>
+                        }<br><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#PA11" role="button" aria-expanded="false"
+                aria-controls="multiCollapseExample1">11. UART</a>
+        </p>
+        <div class="row">
+            <div class="collapse multi-collapse flex" id="PA11">
+                <div class="card card-body">
+                    <p>/*Baud Rate GENERATION<br>
+                        * n => required baudrate<br>
+                        * BRGH = 0<br>
+                        * SPBRG = (Fosc / (64 * n)) -1<br>
+                        * For 9600 baudrate, SPBRG ~=77<br>
+                        */<br>
+                        <br>
+                        #include&#60;p18F4550.h><br>
+                        #include&#60;stdio.h><br>
+                        #define Fosc 48000000UL<br>
+                        <br>
+                        void InitUART(unsigned int baudrate)<br>
+                        {<br>
+                        TRISCbits.RC6 = 0; //TX pin set as output<br>
+                        TRISCbits.RC7 = 1; //RX pin set as input<br>
+                        <br>
+                        SPBRG = (unsigned char)(((Fosc /64)/baudrate)-1);<br>
+                        BAUDCON = 0b00000000; //Non-inverted data; 8-bit baudrate generator<br>
+                        <br>
+                        TXSTA = 0b00100000; //Asynchronous 8-bit; Transmit enabled; Low speed baudrate select<br>
+                        RCSTA = 0b10010000; //Serial port enabled; 8-bit data; single receive enabled<br>
+                        }<br>
+                        <br>
+                        void SendChar(unsigned char data)<br>
+                        {<br>
+                        while(TXSTAbits.TRMT == 0); //Wait while transmit register is empty<br>
+                        <br>
+                        TXREG = data; //Transmit data<br>
+                        }<br>
+                        <br>
+                        void putch(unsigned char data)<br>
+                        {<br>
+                        SendChar(data);<br>
+                        }<br>
+                        <br>
+                        unsigned char GetChar(void)<br>
+                        {<br>
+                        while(!PIR1bits.RCIF); //Wait till receive buffer becomes full<br>
+                        return RCREG; //Returned received data<br>
+                        }<br>
+                        <br>
+
+                        void main(void)<br>
+                        {<br>
+                        InitUART(9600);<br>
+                        <br>
+                        printf("\r\nHello MicroPIC-18F: Enter any Key from Keyboard\r\n");<br>
+                        <br>
+                        while(1)<br>
+                        {<br>
+                        printf("%c! ",GetChar()); //Receive character from PC and echo back<br>
+                        }<br>
+                        <br>
+                        while(1);<br>
+                        }<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#PA12" role="button" aria-expanded="false"
+                aria-controls="multiCollapseExample1">12. Temperature Sensor</a>
+        </p>
+        <div class="row">
+            <div class="collapse multi-collapse flex" id="PA12">
+                <div class="card card-body">
+                    <p>/*<br>
+                        * File: main.c<br>
+                        * Author: MicroEmbedded<br>  *<br>  * Created on October 15, 2016, 4:35 PM<br>
+                        */<br>  <br>
+                        <br>  #include &#60;pic18f4550.h><br>  #include &#60;stdio.h><br>  <br>  #define LCD_EN LATAbits.LA1<br>  #define LCD_RS LATAbits.LA0<br>  #define LCDPORT LATB<br> <br> unsigned char str[16];<br>  <br>
+                        void lcd_delay(unsigned int time)<br> {<br>
+                        unsigned int i , j ;<br>  <br>
+                        for(i = 0; i < time; i++)<br>      {<br>
+                            for(j=0;j&#60;100;j++);<br>  }<br>  }<br>  <br>
+
+ void SendInstruction(unsigned char command)<br>
+                            {<br>  LCD_RS = 0; // RS low : Instruction<br>  LCDPORT = command;<br>
+                            LCD_EN = 1; // EN High<br>  lcd_delay(10);<br>  LCD_EN = 0; // EN Low; command sampled at EN falling edge<br>  lcd_delay(10);<br>  }<br>  <br>  void SendData(unsigned char lcddata)<br>  {<br>  LCD_RS = 1; // RS HIGH : DATA<br>  LCDPORT = lcddata;<br>
+                            LCD_EN = 1; // EN High<br>  lcd_delay(10);<br>
+                            LCD_EN = 0; // EN Low; data sampled at EN falling edge<br>   lcd_delay(10);<br>  }
+                            <br> void InitLCD(void)<br> {<br>  ADCON1 = 0x0F;<br>  TRISB = 0x00; //set data port as output<br>  TRISAbits.RA0 = 0; //RS pin<br>
+                            TRISAbits.RA1 = 0; // EN pin<br>  <br><br>  SendInstruction(0x38); //8 bit mode, 2 line,5x7 dots<br>  SendInstruction(0x06); //entry mode<br>  SendInstruction(0x0C); //Display ON cursor OFF<br> SendInstruction(0x01); //Clear display<br>  SendInstruction(0x80); //set address to 0<br>
+                            }<br> <br>
+                            void LCD_display(unsigned int row, unsigned int pos, unsigned char *ch)<br> {<br>
+                            if(row==1)<br>  SendInstruction(0x80 | (pos-1));<br>
+                            else<br> SendInstruction(0xC0 | (pos-1));<br>
+ while(*ch)<br>SendData(*ch++);<br>  }<br>
+ void ADCInit(void)<br>  {<br>  TRISEbits.RE2 = 1; //ADC channel 7 input<br>
+                            <br>  ADCON1 = 0b00000111; //Ref voltages Vdd & Vss; AN0 - AN7 channels Analog<br>
+                            ADCON2 = 0b10101110; //Right justified; Acquisition time 4T; Conversion clock Fosc/64<br>  }<br>  <br>   unsigned short Read_Temp(void)<br>  {<br> ADCON0 = 0b00011101; //ADC on; Select channel;<br>  GODONE = 1; //Start Conversion<br>  <br>  while(GO_DONE == 1 ); //Wait till A/D conversion is complete<br>  return ADRES; //Return ADC result<br>  }<br>  <br> int main(void) <br>  {<br>  unsigned int temp;<br>  InitLCD();<br> ADCInit();<br> LCD_display(1,1,"Temperature:");<br>  while(1)<br> {<br> temp = Read_Temp();<br> temp = ((temp * 500) / 1023);<br>sprintf(str,"%d'C ",temp);<br>LCD_display(2,1,str);<br>lcd_delay(9000);<br>
+ }<br>return 0;<br>
+ }<br>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
